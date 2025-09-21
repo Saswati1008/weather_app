@@ -16,8 +16,9 @@ body {
     color: #fff;
     margin: 100px auto 0;
     border-radius: 20px;
-    padding: 40px  35px;
+    padding: 40px 35px;
     text-align: center;
+    transition: background 0.5s ease;
 
 }
 
@@ -59,10 +60,10 @@ body {
 
 }
 
-.weather_icon {
+/* .weather_icon {
     width: 170px;
     margin-top: 30px;
-}
+} */
 
 .weather h1 {
     font-size: 80px;
@@ -75,39 +76,99 @@ body {
     margin-top: -10px;
 }
 
+.condition {
+    font-size: 30px;
+    font-weight: 700;
+    color: #f0f0f0;
+  margin: 5px 0 10px 0;
+}
+
+.time {
+    font-size: 20px;
+    margin: 5px 0 20px 0;
+}
+
 .details {
+
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
-    margin-top: 50px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    gap: 10px;
 }
 
 .col {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    text-align: left;
+    min-width: 70px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px 10px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    cursor: default;
 
 }
 
-.col img {
-    width: 40px;
-    margin-right: 10px;
+.col:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
 }
 
-.humidity, .wind{
+.detail-icon {
     font-size: 28px;
-    margin-top:-6px ;
+    margin-bottom: 6px;
+    color: #fff;
 }
 
-.weather{
+
+.col p:first-child {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 3px;
+    color: #fff;
+}
+
+.col p:last-child {
+    font-size: 14px;
+    color: #f0f0f0;
+}
+
+
+.humidity,
+.wind {
+    font-size: 28px;
+    margin-top: -6px;
+}
+
+.weather {
     display: none;
 }
 
-.error{
+.error {
     text-align: left;
     margin-left: 10px;
     font-size: 14px;
     margin-top: 10px;
     display: none;
+}
+
+.forecast {
+    margin-top: 25px;
+    display: flex;
+    overflow-x: auto;
+    gap: 12px;
+}
+
+.forecast-item {
+    min-width: 100px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+}
+
+.forecast-item p {
+    margin: 3px 0;
+    font-size: 14px;
 }
